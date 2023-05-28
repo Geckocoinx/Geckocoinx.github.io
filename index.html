@@ -386,7 +386,24 @@ z-index: 999; /* set a high z-index value */
       transform: translateY(0);
     }
   }
-
+  .image3-style {
+    animation: floating 3s ease-in-out infinite;
+  }
+@keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .image3-style {
+    border: 5px solid #B56727;
+    border-radius: 25px;
+  }
   
 
   h6 {
@@ -452,8 +469,209 @@ table {
         th {
             font-weight: bold;
         }
+        
+        /*start of piechart*/
+.heading{
+    text-align: center;
+    margin-top: 50px;
+}
+/* Default styles for the wrapper */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 480px) {
+  /* Adjust the styles for mobile screens */
+  .wrapper {
+    flex-direction: column;
+    /* Add any other necessary styles */
+  }
+.pie-wrap {
+    max-width: 100%; /* Adjust the maximum width as needed */
+    height: auto; /* Let the height adjust proportionally */
+  }
+}
 
 
+.pie-wrap{
+    border: 5px solid #ff9900;
+    width: 400px;
+    height: 400px;
+    margin: 10% 50px;
+    position: relative;
+    border-radius: 50%;
+    color: black;
+}
+.pie-wrap .entry{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* *the individual entries* */
+
+.sky-blue{
+    background-color: lightskyblue;
+    height:50%;
+    width: 50%;
+    display: block;
+}
+
+.light-yellow{
+    background-color: lightyellow;
+    height:50%;
+    width: 50%;
+}
+.pink{
+    background-color: pink;
+    height:50%;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 50%;
+    clip-path: polygon(0 0, 100% 0%, 0% 100%);
+}
+
+.purple{
+    background-color: purple;
+    height:50%;
+    width: 50%;
+    right: 0;
+    top: 0;
+    position: absolute;
+    clip-path:polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.green{
+    background-color: limegreen;
+    height:50%;
+    width: 50%;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    clip-path:polygon(0% 0%, 100% 0%, 100% 100%);
+}
+
+.wheat{
+    background-color: wheat;
+    height:50%;
+    width: 50%;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    clip-path:polygon(0% 0%, 100% 100%, 0% 100%);
+}
+.pie-wrap .purple p{
+    position: absolute;
+    top: 140px;
+    color: white;
+}
+.pie-wrap .purple p:first-child{
+    top: 120px;
+}
+
+.pie-wrap .green p{
+    position: absolute;
+    top: 20px;
+}
+
+.pie-wrap .green p:first-child{
+    top: 0px;
+}
+
+.pie-wrap .pink p, .pie-wrap .wheat p{
+    position: absolute;
+    left: 20px;
+    top: 80px;
+}
+
+.pie-wrap .pink, .pie-wrap .wheat{
+    justify-content: flex-start;
+}
+
+.pie-wrap .pink p:first-child, .pie-wrap .wheat p:first-child{
+    top: 100px;
+}
+.pie-wrap{
+    border: 2px solid lightgrey;
+    width: 400px;
+    height: 400px;
+    margin: 10% 50px;
+    position: relative;
+    border-radius: 50%;
+    color: black;
+    overflow: hidden;
+}
+.entry .entry-value{
+    display: none;
+    transition: all 500ms linear;
+}
+.entry:hover .entry-value{
+    display: block;
+}
+.entry{
+    transition: all 500ms linear ;
+}
+.entry:hover{
+    filter: invert();
+}
+.key-wrap label{
+    display: block;
+    border: 1px solid;
+    width: 50px;
+    text-align: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    text-align: center;
+    }
+input[type="radio"]{
+    display: none;
+}
+.rice-label{
+    background-color: lightyellow;
+}
+.beans-label{
+    background-color: pink;
+}
+.plantain-label{
+    background-color: purple;
+    color: white;
+}
+.potato-label{
+    background-color: limegreen;
+}
+.yam-label{
+    background-color: wheat;
+}
+.pasta-label{
+    background-color: skyblue;
+}
+.text{
+    display: none;
+    margin-left: -50px;
+    position: absolute;
+    margin-top: 50px;
+    font-size: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-bottom: 5px solid ;
+    border-top: 5px solid ;
+}
+.key-wrap label:active{
+    opacity: .5;
+}
+.rice-key:checked ~ .rice-text, .beans-key:checked ~ .beans-text, .plantain-key:checked ~ .plantain-text,  .potato-key:checked ~ .potato-text, .yam-key:checked ~ .yam-text, .pasta-key:checked ~ .pasta-text{
+    display: block;
+}
+    
+    
+    
+    /*end of pie chart code*/
     
   </style>
   
@@ -535,7 +753,7 @@ Gecko Coin is a cryptocurrency that has been created by a community of individua
 
 <h1>🦎Exchanges 🦎</h1>
 <div style="display: flex; justify-content: center;">
-<img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/logo.png" width="300" height="auto" class="image2-style">
+<img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/logo.png" width="300" height="auto" class="image3-style">
 </div>
 <h1>🦎</h1>
 <h1>🦎</h1>
@@ -596,35 +814,62 @@ Liquidity will be lock for 10 fuck'n years!🦎</p>
      
 
 
-   <div id="container">
-     
+<h1 class="heading">🦎$GECKO Distribution 🦎</h1>
+<div class="wrapper">
 
-   </div>
+<div class="pie-wrap">
+  
+<div class="light-yellow entry">
+    <p>80%</p>
+    <p class="entry-value">Liquidity Pool</p>
+</div>
 
- <script>
- 
-        var pie = new ej.charts.AccumulationChart({
-            //Initializing Series
-            series: [
-                {
-                    dataSource: [
-                        { 'x': 'Liquidity Pool', y: 80 }, { 'x': 'Pre-Sale', y: 6 },
-                        { 'x': 'Cex Listing', y: 10 },
-                        { 'x': 'Marketing', y: 4 },
+<div class="sky-blue entry">
+    <p>10%</p>
+    <p class="entry-value">Cex Listing</p>
+</div>
 
-                    ],
-                    dataLabel: {
-                        visible: true,
-                        position: 'Inside',
-                    },
-                    xName: 'x',
-                    yName: 'y'
-                }
-            ],
-        });
-        pie.appendTo('#container');
-    </script>
+<div class="pink entry">
+    <p>6%</p>
+    <p class="entry-value"> Pre-sale</p>
+</div>
+
+<div class="purple entry">
+    <p> 4%</p>
+    <p class="entry-value">Marketing</p>
+</div>
+
+  
+</div>
+
+<div class="key-wrap">
+  
+<input type="radio" id="rice" name="values" class="rice-key"/>
+<label for="rice" class="rice-label">Liquidity Pool</label>
+
+<input type="radio" name="values" id="beans" class="beans-key"/>
+<label for="beans" class="beans-label"> Presale</label>
+
+<input type="radio" name="values" id="plantain" class="plantain-key"/>
+<label for="plantain" class="plantain-label"> Marketing</label>
+
+<input type="radio" name="values" id="pasta" class="pasta-key"/>
+<label for="pasta" class="pasta-label"> Cex Listing</label>
+
+<p class="rice-text text">80% of the total supply will be lock for 10 fuck'n years on the liquidity pool! </p>
+<p class="beans-text text">6% of the total supply will be use for token pre-sale</p>
+<p class="plantain-text text">4% of the total supply will be use dor marketing.</p>
+<p class="pasta-text text">10% of the total supply will be reserve for CEX listing.</p>
+
+
+</div>
+
+</div>
     
+    <h5>🦎</h5>
+    </section>
+
+    <section>
     <h2>Distribution</h2>
 <p>🦎80% of the total supply will be lock for 10 fuck'n years into the liquidity pool!</p>
 <p>🦎10% of the total supply will be reserve for CEX listing.</p>
