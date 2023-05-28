@@ -360,8 +360,25 @@ z-index: 999; /* set a high z-index value */
       transform: translateY(0);
     }
   }
+  
+  .image2-style {
+    animation: floating 3s ease-in-out infinite;
+  }
+@keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
-  h4 {
+  
+
+  h6 {
     animation: floating 3s ease-in-out infinite;
   }
 
@@ -371,8 +388,51 @@ p {
   color:#DFFF00;
   justify-content: center;
 }
- 
+table {
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        border: 2px solid black;
+    }
 
+    th, td {
+        border: 4px solid #90EE90;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #ffd700;
+    }
+.add {
+            border: 5px solid #DFFF00;
+            padding: 10px;
+            font-family: Arial;
+            font-weight: bold;
+            max-width: 800px;
+            overflow-x: auto;
+            margin: 50px auto;
+            text-align: left;
+            color: #DFFF00;
+        }
+
+        table {
+           border-radius: 10px
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed;
+            padding: 0;
+            
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 4px solid #90EE90;
+        }
+
+        th {
+            font-weight: bold;
+        }
 
 
     
@@ -394,8 +454,8 @@ p {
   <ul class="menu">
     <li><a href="#home" onclick="myFunction()">Home</a></li>
     <li><a href="#about" onclick="myFunction()">About</a></li>
-
-    <li><a href="#team" onclick="myFunction()">Team</a></li>
+    <li><a href="#contact" onclick="myFunction()">Roadmap</a></li>
+    <li><a href="#roadmap" onclick="myFunction()">Team</a></li>
     <li><a href="#contact" onclick="myFunction()">Contact</a></li>
 
   </ul>
@@ -410,11 +470,11 @@ p {
 <p>
   
 </p>
-<a href="https://twitter.com">
+<a href="https://twitter.com/geckocoinX?t=8usxgTuo7zDQV_y84eX6LQ&s=09">
     <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/twitter.png" alt="Twitter">
   </a>
 
-  <a href="https://telegram.org">
+  <a href="https://t.me/+GKHKeXvrpHsyMWU9">
     <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/telegram.jpg" alt="Telegram">
   </a>
 <p>
@@ -423,7 +483,13 @@ p {
 <p class="memecoin">the most memeable memecoin in existence. The dogs and frogs have had their day, it's time for Gecko to take reign.</p>
 
 </body>
+
+    <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/20230528_115244.png" width="300px" height="auto" class="image2-style">
+
     </section>
+    
+
+    
     
     <section id="button">
       <h4>Buy $GECKO  🦎.....</h4>
@@ -465,14 +531,56 @@ Gecko Coin is a cryptocurrency that has been created by a community of individua
 
 <h5>$GECKO will be here forever!
 Liquidity will be lock for 10 fuck'n years!🦎</h5>
+
+<div class="add">
+        <table>
+
+            <tr>
+                <td>Chain:</td>
+                <td>BSC</td>
+            </tr>
+            <tr>
+                <td>Token Name:</td>
+                <td>Gecko Coin</td>
+            </tr>
+            <tr>
+                <td>Token Symbol:</td>
+                <td>GECKO</td>
+            </tr>
+            <tr>
+                <td>Token Decimals:</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Max Supply</td>
+                <td>100 Million</td>
+            </tr>
+            <tr>
+                <td>Contract Address:</td>
+                <td>coming soon...</td>
+            </tr>
+            <tr>
+                <td>Contract</td>
+                <td>Renounced</td>
+            </tr>
+            <tr>
+                <td>Liquidity:</td>
+                <td>Lock for 10 Years</td>
+            </tr>
+            <tr>
+                <td>Feature</td>
+                <td>Reflection</td>
+            </tr>
+        </table>
+    </div>
+     
+
+
    <div id="container">
      
-     
-     
-     
-     
-     
+
    </div>
+
  <script>
  
         var pie = new ej.charts.AccumulationChart({
@@ -496,6 +604,7 @@ Liquidity will be lock for 10 fuck'n years!🦎</h5>
         });
         pie.appendTo('#container');
     </script>
+    
     <h2>Distribution</h2>
 <p>🦎80% of the total supply will be lock for 10 fuck'n years into the liquidity pool!</p>
 <p>🦎10% of the total supply will be reserve for CEX listing.</p>
@@ -510,6 +619,15 @@ Liquidity will be lock for 10 fuck'n years!🦎</h5>
 <h3>Gecko Coin is a community-driven meme coin created purely for fun with no specific use case. It embraces the spirit of the meme culture and the cryptocurrency community. With its unique reflection feature, Gecko Coin rewards holders with additional tokens on every transaction.</h3>
     
     </section>
+    
+    <section id="roadmap">
+      <h2>Roadmap 🦎</h2>
+      <h4>We don't have any other roadmap but to the moon🚀</h4>
+<div style="display: flex; justify-content: center;">
+      <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/20230528_131431.png" class="image2-style" width="300px" height="auto">
+      </div>
+    </section>
+    
 
     <!-- Content for the team page -->
     <section id="team">
@@ -526,15 +644,22 @@ $GECKO is a community-owned and managed cryptocurrency. No dedicated team - it's
       $GECKO is owned by its community so just fuck'n join the community</h5>
 <div style="display: flex; justify-content: center;">
   
-<a href="https://twitter.com">
+<a href="https://twitter.com/geckocoinX?t=8usxgTuo7zDQV_y84eX6LQ&s=09">
     <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/twitter.png" alt="Twitter">
   </a>
 
-  <a href="https://telegram.org">
+  <a href="https://t.me/+GKHKeXvrpHsyMWU9">
     <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/telegram.jpg" alt="Telegram">
   </a>
   </div>
     </section>
+    <section>
+      <h2>
+Disclaimer: Gecko Coin is a fictional cryptocurrency created solely for entertainment purposes. It has no team or official use case and should not be considered as a real investment or financial opportunity.
+      </h2>
+      <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/shpvf0bke008rvno1kvpto8bhi-75cfd99eb8ecaef8a24ac82e744dbca3.png" width="100%" height="auto" class="image2-style">
+    </section>
+
   </main>
 
   <footer>
@@ -555,6 +680,8 @@ function showSlides() {
 setInterval(showSlides, 1000); // Change image every 3 seconds (adjust as needed)
 
   </script>
-  
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 8px;">&copy; 2023 Gecko Coin. All rights reserved.</p>
+  </div>
 </body>
 </html>
