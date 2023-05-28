@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gecko Coin</title>
+  <link rel="stylesheet" href="styles.css"><script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+  
+  <style>
+   
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #045454;
+}
+
+h1, h2 {
+  color: #ff9900;
+  text-align: center;
+}
+h3 {
+  color: #9ACD32;
+  font-size: 25px; 
+  text-align: center;
+}
+h4 {
+  color: #DFFF00;
+  font-size: 25px; 
+  text-align: center;
+}
+h5 {
+  color: #FFF;
+  font-size: 25px; 
+  text-align: center;
+}
+
+
+/* Header Styles */
+header {
+  background-color: #000;
+  padding: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main Content Styles */
+main {
+  padding: 20px;
+}
+
+#home {
+  text-align: center;
+}
+
+#about, #team, #contact {
+  margin-bottom: 40px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Additional Meme-Inspired Styles */
+h1 {
+  font-size: 40px;
+  text-transform: none;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+section {
+  background-color: #4d7d44;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.memecoin {
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px black;
+  background-color: #283c07;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.image-style {
+justify-content: center;
+  max-width: 35%; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-weight: bold;
+  font-size: 20px;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000000;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+a {
+  color: #ff9900;
+  text-decoration: none;
+}
+.social-logo {
+      width: 50px;
+      height: 50px;
+      transition: transform 0.3s;
+    }
+
+    .social-logo:hover {
+      transform: scale(1.2);
+    }
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #DFFF00;
+  background: linear-gradient(to left, #045454, #045454);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #045454;
+  height: 50px;
+  padding: 1em;
+z-index: 999; /* set a high z-index value */
+}
+.logo-container img {
+  width: 45px;
+  height: 45px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container h2 {
+  margin-left: 10px;
+  font-size: 20px;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+.slideshow-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #000;
+}
+
+.slides {
+  display: flex;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+  transition: transform 1s ease-in-out; /* Adjust the transition duration as needed */
+}
+
+.slide-hidden {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .slides img {
+    width: auto;
+    max-width: 30%;
+    height: auto;
+  }
+}
+@keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    animation: floating 3s ease-in-out infinite;
+  }
+@keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .image-style {
+    animation: floating 3s ease-in-out infinite;
+  }
+@keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  h4 {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+p {
+  font font-style: comic sans-serif;
+  font-size: 24px;
+  color:#DFFF00;
+  justify-content: center;
+}
+ 
+
+
+
+    
+  </style>
+  
+</head>
+<body>
+<section class="top-nav">
+  <div>
+    <div class="logo-container">
+      <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/geckologo.png" alt="Your Logo">
+      <h2>Gecko Coin</h2>
+    </div>
+  </div>
+  <input id="menu-toggle" type="checkbox" />
+  <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+  <ul class="menu">
+    <li><a href="#home" onclick="myFunction()">Home</a></li>
+    <li><a href="#about" onclick="myFunction()">About</a></li>
+
+    <li><a href="#team" onclick="myFunction()">Team</a></li>
+    <li><a href="#contact" onclick="myFunction()">Contact</a></li>
+
+  </ul>
+</section>
+<h2>🦎</h2>
+  <main>
+    <!-- Content for the homepage -->
+    <section id="home">
+      <h1>🦎 Welcome to Gecko Coin! 🦎</h1>
+
+<img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/geckologo.png" class="image-style">
+<p>
+  
+</p>
+<a href="https://twitter.com">
+    <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/twitter.png" alt="Twitter">
+  </a>
+
+  <a href="https://telegram.org">
+    <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/telegram.jpg" alt="Telegram">
+  </a>
+<p>
+  
+</p>
+<p class="memecoin">the most memeable memecoin in existence. The dogs and frogs have had their day, it's time for Gecko to take reign.</p>
+
+</body>
+    </section>
+    
+    <section id="button">
+      <h4>Buy $GECKO  🦎.....</h4>
+<div class="button-container">
+  <a href="https://pancakeswap.finance/swap?outputCurrency=0xb2de3BE7535624214741adB0692a4aB6E9E20C87&inputCurrency=BNB">
+    <p>
+      
+    </p>
+  <button class="button">Pancakeswap
+    <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/pancakeswap-cake-logo.png" alt="Logo" class="logo">
+  </button></a>
+</div>
+<div class="button-container">
+  <a href="https://www.geckoterminal.com/bsc/pools/0x9De608BfA9cF43B79d38A1213F6B4A9FfD45721d?utm_source=telegram&utm_medium=bobbybuybot&utm_campaign=bobbybuybot">
+  <button class="button">Chart
+    <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/pancakeswap-cake-logo.png" alt="Logo" class="logo">
+  </button></a>
+</div>
+<h2>🦎</h2>
+<h5>
+Gecko Coin is a cryptocurrency that has been created by a community of individuals, with the aim of being a currency that is accessible and beneficial for everyone. It is referred to as a "meme coin," which suggests that it is inspired by the trend of meme-based cryptocurrencies. The emphasis on being "for the people by the people" indicates that Gecko Coin aims to foster a sense of community involvement and participation in its development.
+<h2>🦎</h2>
+</h5>
+<h1>🦎Exchanges 🦎</h1>
+<div style="display: flex; justify-content: center;">
+<img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/logo.png" width="300" height="auto">
+</div>
+<h1>🦎</h1>
+<h1>🦎</h1>
+<div class="slideshow-container">
+  <div class="slides">
+    <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/g1.jpg" alt="Image 1">
+    <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/g2.jpg" alt="Image 2">
+    <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/g3.jpg" alt="Image 3">
+    <img src="https://raw.githubusercontent.com/Onchainsperm/onchain/main/g4.jpg" alt="Image 4">
+  </div>
+</div>
+<h2>Tokenomics</h2>
+
+<h5>$GECKO will be here forever!
+Liquidity will be lock for 10 fuck'n years!🦎</h5>
+   <div id="container">
+     
+     
+     
+     
+     
+     
+   </div>
+ <script>
+ 
+        var pie = new ej.charts.AccumulationChart({
+            //Initializing Series
+            series: [
+                {
+                    dataSource: [
+                        { 'x': 'Liquidity Pool', y: 80 }, { 'x': 'Pre-Sale', y: 6 },
+                        { 'x': 'Cex Listing', y: 10 },
+                        { 'x': 'Marketing', y: 4 },
+
+                    ],
+                    dataLabel: {
+                        visible: true,
+                        position: 'Inside',
+                    },
+                    xName: 'x',
+                    yName: 'y'
+                }
+            ],
+        });
+        pie.appendTo('#container');
+    </script>
+    <h2>Distribution</h2>
+<p>🦎80% of the total supply will be lock for 10 fuck'n years into the liquidity pool!</p>
+<p>🦎10% of the total supply will be reserve for CEX listing.</p>
+<p>🦎6% will be available for pre-sale</p>
+<p>🦎4% of the total supply will be use for marketing.</p>
+
+    </section>
+
+    <!-- Content for the about page -->
+    <section id="about">
+      <h2>About</h2>
+<h3>Gecko Coin is a community-driven meme coin created purely for fun with no specific use case. It embraces the spirit of the meme culture and the cryptocurrency community. With its unique reflection feature, Gecko Coin rewards holders with additional tokens on every transaction.</h3>
+    
+    </section>
+
+    <!-- Content for the team page -->
+    <section id="team">
+      <h2>Our Team</h2>
+<h5>
+$GECKO is a community-owned and managed cryptocurrency. No dedicated team - it's all about the community.
+</h5>
+    </section>
+
+    <!-- Content for the contact page -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <h5>there is nothing to contact!
+      $GECKO is owned by its community so just fuck'n join the community</h5>
+<div style="display: flex; justify-content: center;">
+  
+<a href="https://twitter.com">
+    <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/twitter.png" alt="Twitter">
+  </a>
+
+  <a href="https://telegram.org">
+    <img class="social-logo" src="https://raw.githubusercontent.com/Onchainsperm/Onchainsperm.github.io/main/telegram.jpg" alt="Telegram">
+  </a>
+  </div>
+    </section>
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <script src="script.js"></script> 
+  <script>
+const slides = document.querySelectorAll(".slides img");
+let currentIndex = 0;
+
+function showSlides() {
+  slides[currentIndex].classList.add("slide-hidden");
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].classList.remove("slide-hidden");
+}
+
+setInterval(showSlides, 1000); // Change image every 3 seconds (adjust as needed)
+
+  </script>
+  
+</body>
+</html>
